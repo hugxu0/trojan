@@ -1,0 +1,22 @@
+[General]
+ipv6 = false
+dns-server = 45.77.15.52
+exclude-simple-hostnames = true
+enhanced-mode-by-rule = true
+[Proxy]
+
+DIRECT = direct
+ProxyTrojan = trojan, 45.77.15.52, 443, password=7699d8eeea, udp-relay=false, skip-cert-verify=true, sni=www.xuxus.site
+
+[Proxy Group]
+  - name: trojan
+    type: select
+    proxies:
+      - ProxyTrojan
+      - DIRECT
+
+
+
+
+[Rule]
+FINAL, ProxyTrojan
